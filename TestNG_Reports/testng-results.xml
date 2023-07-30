@@ -1,25 +1,124 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testng-results ignored="0" total="1" passed="1" failed="0" skipped="0">
+<testng-results ignored="0" total="5" passed="5" failed="0" skipped="0">
   <reporter-output>
   </reporter-output>
-  <suite started-at="2023-06-30T12:49:46 IST" name="Suite" finished-at="2023-06-30T12:50:20 IST" duration-ms="34091">
+  <suite started-at="2023-07-30T14:13:59 IST" name="Suite" finished-at="2023-07-30T14:16:42 IST" duration-ms="163366">
     <groups>
     </groups>
-    <test started-at="2023-06-30T12:49:46 IST" name="Selenium Tests with local" finished-at="2023-06-30T12:50:20 IST" duration-ms="34091">
+    <test started-at="2023-07-30T14:13:59 IST" name="Selenium Tests with chrome" finished-at="2023-07-30T14:15:49 IST" duration-ms="110221">
       <class name="com.org.Tests.LoginTest">
-        <test-method is-config="true" signature="setup()[pri:0, instance:com.org.Tests.LoginTest@66790384]" started-at="2023-06-30T12:49:46 IST" name="setup" finished-at="2023-06-30T12:50:11 IST" duration-ms="25342" status="PASS">
+        <test-method is-config="true" signature="setup(java.lang.String)[pri:0, instance:com.org.Tests.LoginTest@590846d]" started-at="2023-07-30T14:13:59 IST" name="setup" finished-at="2023-07-30T14:15:08 IST" duration-ms="68824" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[chrome]]>
+              </value>
+            </param>
+          </params>
           <reporter-output>
           </reporter-output>
         </test-method> <!-- setup -->
-        <test-method signature="loginTest()[pri:0, instance:com.org.Tests.LoginTest@66790384]" started-at="2023-06-30T12:50:11 IST" name="loginTest" finished-at="2023-06-30T12:50:17 IST" duration-ms="5538" status="PASS">
+        <test-method signature="loginTest()[pri:0, instance:com.org.Tests.LoginTest@590846d]" started-at="2023-07-30T14:15:08 IST" name="loginTest" finished-at="2023-07-30T14:15:48 IST" duration-ms="39782" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- loginTest -->
-        <test-method is-config="true" signature="tearDown()[pri:0, instance:com.org.Tests.LoginTest@66790384]" started-at="2023-06-30T12:50:17 IST" name="tearDown" finished-at="2023-06-30T12:50:20 IST" duration-ms="2954" status="PASS">
+        <test-method is-config="true" signature="tearDown()[pri:0, instance:com.org.Tests.LoginTest@590846d]" started-at="2023-07-30T14:15:48 IST" name="tearDown" finished-at="2023-07-30T14:15:49 IST" duration-ms="1246" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- tearDown -->
       </class> <!-- com.org.Tests.LoginTest -->
-    </test> <!-- Selenium Tests with local -->
+    </test> <!-- Selenium Tests with chrome -->
+    <test started-at="2023-07-30T14:13:59 IST" name="Selenium Tests with edge" finished-at="2023-07-30T14:16:03 IST" duration-ms="124362">
+      <class name="com.org.Tests.LoginTest">
+        <test-method is-config="true" signature="setup(java.lang.String)[pri:0, instance:com.org.Tests.LoginTest@5f68a5c0]" started-at="2023-07-30T14:13:59 IST" name="setup" finished-at="2023-07-30T14:15:21 IST" duration-ms="81782" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[edge]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setup -->
+        <test-method signature="loginTest()[pri:0, instance:com.org.Tests.LoginTest@5f68a5c0]" started-at="2023-07-30T14:15:21 IST" name="loginTest" finished-at="2023-07-30T14:16:01 IST" duration-ms="40306" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- loginTest -->
+        <test-method is-config="true" signature="tearDown()[pri:0, instance:com.org.Tests.LoginTest@5f68a5c0]" started-at="2023-07-30T14:16:01 IST" name="tearDown" finished-at="2023-07-30T14:16:03 IST" duration-ms="2180" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- tearDown -->
+      </class> <!-- com.org.Tests.LoginTest -->
+    </test> <!-- Selenium Tests with edge -->
+    <test started-at="2023-07-30T14:13:59 IST" name="Selenium Tests with ff2" finished-at="2023-07-30T14:16:33 IST" duration-ms="153890">
+      <class name="com.org.Tests.LoginTest">
+        <test-method is-config="true" signature="setup(java.lang.String)[pri:0, instance:com.org.Tests.LoginTest@4d0f0c8]" started-at="2023-07-30T14:13:59 IST" name="setup" finished-at="2023-07-30T14:15:50 IST" duration-ms="111191" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[firefox]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setup -->
+        <test-method signature="loginTest()[pri:0, instance:com.org.Tests.LoginTest@4d0f0c8]" started-at="2023-07-30T14:15:50 IST" name="loginTest" finished-at="2023-07-30T14:16:20 IST" duration-ms="29910" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- loginTest -->
+        <test-method is-config="true" signature="tearDown()[pri:0, instance:com.org.Tests.LoginTest@4d0f0c8]" started-at="2023-07-30T14:16:20 IST" name="tearDown" finished-at="2023-07-30T14:16:33 IST" duration-ms="12690" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- tearDown -->
+      </class> <!-- com.org.Tests.LoginTest -->
+    </test> <!-- Selenium Tests with ff2 -->
+    <test started-at="2023-07-30T14:13:59 IST" name="Selenium Tests with ff" finished-at="2023-07-30T14:16:33 IST" duration-ms="153962">
+      <class name="com.org.Tests.LoginTest">
+        <test-method is-config="true" signature="setup(java.lang.String)[pri:0, instance:com.org.Tests.LoginTest@1f4a9338]" started-at="2023-07-30T14:13:59 IST" name="setup" finished-at="2023-07-30T14:15:51 IST" duration-ms="111873" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[firefox]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setup -->
+        <test-method signature="loginTest()[pri:0, instance:com.org.Tests.LoginTest@1f4a9338]" started-at="2023-07-30T14:15:51 IST" name="loginTest" finished-at="2023-07-30T14:16:21 IST" duration-ms="30278" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- loginTest -->
+        <test-method is-config="true" signature="tearDown()[pri:0, instance:com.org.Tests.LoginTest@1f4a9338]" started-at="2023-07-30T14:16:21 IST" name="tearDown" finished-at="2023-07-30T14:16:33 IST" duration-ms="11706" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- tearDown -->
+      </class> <!-- com.org.Tests.LoginTest -->
+    </test> <!-- Selenium Tests with ff -->
+    <test started-at="2023-07-30T14:13:59 IST" name="Selenium Tests with chrome2" finished-at="2023-07-30T14:16:42 IST" duration-ms="163366">
+      <class name="com.org.Tests.LoginTest">
+        <test-method is-config="true" signature="setup(java.lang.String)[pri:0, instance:com.org.Tests.LoginTest@75573609]" started-at="2023-07-30T14:13:59 IST" name="setup" finished-at="2023-07-30T14:16:14 IST" duration-ms="135152" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[chrome]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setup -->
+        <test-method signature="loginTest()[pri:0, instance:com.org.Tests.LoginTest@75573609]" started-at="2023-07-30T14:16:14 IST" name="loginTest" finished-at="2023-07-30T14:16:42 IST" duration-ms="27744" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- loginTest -->
+        <test-method is-config="true" signature="tearDown()[pri:0, instance:com.org.Tests.LoginTest@75573609]" started-at="2023-07-30T14:16:42 IST" name="tearDown" finished-at="2023-07-30T14:16:42 IST" duration-ms="369" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- tearDown -->
+      </class> <!-- com.org.Tests.LoginTest -->
+    </test> <!-- Selenium Tests with chrome2 -->
   </suite> <!-- Suite -->
 </testng-results>
