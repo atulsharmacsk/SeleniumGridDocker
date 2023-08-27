@@ -1,10 +1,25 @@
-# To execute this docker-compose yml file use `docker-compose -f docker-compose-v2.yml up`
+# To execute this docker-compose yml file use `docker-compose -f docker-compose-v3-video.yml up`
 # Add the `-d` flag at the end for detached execution
-# To stop the execution, hit Ctrl+C, and then `docker-compose -f docker-compose-v2.yml down`
-version: '2'
+# To stop the execution, hit Ctrl+C, and then `docker-compose -f docker-compose-v3-video.yml down`
+version: "3"
+
+networks:
+  grid:
+    external: true
+
 services:
+  selenium-hub:
+    image: selenium/hub:4.11.0-20230801
+    container_name: selenium-hub
+    ports:
+      - "4442:4442"
+      - "4443:4443"
+      - "4444:4444"
+    networks:
+      - grid
+
   chrome:
-    image: selenium/node-chrome:4.10.0-20230607
+    image: selenium/node-chrome:4.11.0-20230801
     shm_size: 2gb
     depends_on:
       - selenium-hub
@@ -18,8 +33,20 @@ services:
     networks:
       - grid
 
+  chrome_video:
+    image: selenium/video:ffmpeg-4.3.1-20230801
+    volumes:
+      - ./videos:/videos
+    depends_on:
+      - chrome
+    environment:
+      - DISPLAY_CONTAINER_NAME=chrome
+      - FILE_NAME=chrome_video.mp4
+    networks:
+      - grid
+
   edge:
-    image: selenium/node-edge:4.10.0-20230607
+    image: selenium/node-edge:4.11.0-20230801
     shm_size: 2gb
     depends_on:
       - selenium-hub
@@ -27,14 +54,25 @@ services:
       - SE_EVENT_BUS_HOST=selenium-hub
       - SE_EVENT_BUS_PUBLISH_PORT=4442
       - SE_EVENT_BUS_SUBSCRIBE_PORT=4443
-      - SE_NODE_MAX_SESSIONS=3
     ports:
       - "6901:5900"
     networks:
       - grid
 
+  edge_video:
+    image: selenium/video:ffmpeg-4.3.1-20230801
+    volumes:
+      - ./videos:/videos
+    depends_on:
+      - edge
+    environment:
+      - DISPLAY_CONTAINER_NAME=edge
+      - FILE_NAME=edge_video.mp4
+    networks:
+      - grid
+
   firefox:
-    image: selenium/node-firefox:4.10.0-20230607
+    image: selenium/node-firefox:4.11.0-20230801
     shm_size: 2gb
     depends_on:
       - selenium-hub
@@ -42,22 +80,19 @@ services:
       - SE_EVENT_BUS_HOST=selenium-hub
       - SE_EVENT_BUS_PUBLISH_PORT=4442
       - SE_EVENT_BUS_SUBSCRIBE_PORT=4443
-      - SE_NODE_MAX_SESSIONS=5
     ports:
       - "6902:5900"
     networks:
       - grid
 
-  selenium-hub:
-    image: selenium/hub:4.10.0-20230607
-    ports:
-      - "4442:4442"
-      - "4443:4443"
-      - "4444:4444"
+  firefox_video:
+    image: selenium/video:ffmpeg-4.3.1-20230801
+    volumes:
+      - ./videos:/videos
+    depends_on:
+      - firefox
+    environment:
+      - DISPLAY_CONTAINER_NAME=firefox
+      - FILE_NAME=firefox_video.mp4
     networks:
       - grid
-
-
-networks:
-  grid:
-    external: true
