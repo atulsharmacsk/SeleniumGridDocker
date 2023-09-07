@@ -2,7 +2,7 @@ package com.org.Java;
 
 import io.github.bonigarcia.wdm.WebDriverManager;
 import lombok.SneakyThrows;
-import org.openqa.selenium.Capabilities;
+import org.openqa.selenium.MutableCapabilities;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
@@ -37,12 +37,12 @@ public class DriverManager {
 
     @SneakyThrows
     public WebDriver getRemoteDriver(String browser) {
-        driver = new RemoteWebDriver(new URL("http://localhost:4444"), (Capabilities) getRemoteBrowser(browser));
+        driver = new RemoteWebDriver(new URL("http://localhost:4444"), getRemoteBrowser(browser));
         return driver;
     }
 
-    public Object getRemoteBrowser(String browser) {
-        Object option;
+    public MutableCapabilities getRemoteBrowser(String browser) {
+        MutableCapabilities option;
         switch (browser.toLowerCase()) {
             case "firefox":
                 option = new FirefoxOptions();
@@ -56,6 +56,7 @@ public class DriverManager {
             default:
                 throw new IllegalStateException("Unexpected value: " + browser.toLowerCase());
         }
+        option.setCapability("se:recordVideo",true);
         return option;
     }
 

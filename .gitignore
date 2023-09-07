@@ -1,5 +1,5 @@
 \build
 \.gradle
 \.idea
-GradleReports
-TestNG_Reports
+.\GradleReports
+.\TestNG_Reports
