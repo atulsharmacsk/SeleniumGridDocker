@@ -1,4 +1,4 @@
-package com.org.Java;
+package com.org.Drivers;
 
 import io.github.bonigarcia.wdm.WebDriverManager;
 import lombok.SneakyThrows;

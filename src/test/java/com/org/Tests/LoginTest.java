@@ -1,6 +1,6 @@
 package com.org.Tests;
 
-import com.org.Java.DriverManager;
+import com.org.Drivers.DriverManager;
 import lombok.SneakyThrows;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
