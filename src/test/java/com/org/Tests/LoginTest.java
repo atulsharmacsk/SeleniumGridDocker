@@ -1,18 +1,22 @@
 package com.org.Tests;
 
+import com.org.Docker.DockerManager;
 import com.org.Drivers.DriverManager;
 import lombok.SneakyThrows;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.testng.Assert;
-import org.testng.annotations.AfterTest;
-import org.testng.annotations.BeforeTest;
-import org.testng.annotations.Parameters;
-import org.testng.annotations.Test;
+import org.testng.annotations.*;
 
 public class LoginTest {
 
     WebDriver driver;
+    DockerManager dockerManager = new DockerManager();
+
+    @BeforeSuite
+    public void startDocker() {
+        dockerManager.actionDocker("START");
+    }
 
     @Parameters({"browser"})
     @BeforeTest
@@ -37,5 +41,10 @@ public class LoginTest {
     @AfterTest
     public void tearDown() {
         driver.quit();
+    }
+
+    @AfterSuite
+    public void stopDocker() {
+        dockerManager.actionDocker("STOP");
     }
 }

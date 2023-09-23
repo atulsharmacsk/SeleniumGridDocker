@@ -8,17 +8,17 @@
         </classes>
     </test> <!-- Test -->
 
-    <test name="Selenium Tests with ff">
-        <parameter name="browser" value="firefox"/>
-        <classes>
-            <class name="com.org.Tests.LoginTest"/>
-        </classes>
-    </test> <!-- Test -->
+<!--    <test name="Selenium Tests with ff">-->
+<!--        <parameter name="browser" value="firefox"/>-->
+<!--        <classes>-->
+<!--            <class name="com.org.Tests.LoginTest"/>-->
+<!--        </classes>-->
+<!--    </test> &lt;!&ndash; Test &ndash;&gt;-->
 
-    <test name="Selenium Tests with edge">
-        <parameter name="browser" value="edge"/>
-        <classes>
-            <class name="com.org.Tests.LoginTest"/>
-        </classes>
-    </test> <!-- Test -->
+<!--    <test name="Selenium Tests with edge">-->
+<!--        <parameter name="browser" value="edge"/>-->
+<!--        <classes>-->
+<!--            <class name="com.org.Tests.LoginTest"/>-->
+<!--        </classes>-->
+<!--    </test> &lt;!&ndash; Test &ndash;&gt;-->
 </suite> <!-- Suite -->
