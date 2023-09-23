@@ -1,6 +1,6 @@
 \build
 \.gradle
 \.idea
-.\GradleReports
-.\TestNG_Reports
-.\videos
+/GradleReports/
+/TestNG_Reports/
+/videos/
