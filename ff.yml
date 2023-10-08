@@ -1,0 +1,30 @@
+apiVersion: v1
+kind: ReplicationController
+metadata:
+  name: selenium-node-firefox-rep
+spec:  
+  replicas: 2
+  selector:
+    app: selenium-node-firefox
+  template:
+    metadata:
+      name: selenium-node-firefox
+      labels:
+        app: selenium-node-firefox
+    spec:
+      containers:
+        - name: selenium-node-firefox
+          image: selenium/node-firefox
+          ports:
+            - containerPort: 5901
+          env:
+            - name: SE_EVENT_BUS_HOST
+              value: "hub-service"
+            - name: SE_EVENT_BUS_PUBLISH_PORT
+              value: "4442"
+            - name: SE_EVENT_BUS_SUBSCRIBE_PORT
+              value: "4443"
+            - name: SE_NODE_MAX_SESSIONS
+              value: "5"
+            - name: SE_NODE_OVERRIDE_MAX_SESSIONS
+              value: "true"

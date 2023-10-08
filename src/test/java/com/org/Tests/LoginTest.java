@@ -11,12 +11,12 @@ import org.testng.annotations.*;
 public class LoginTest {
 
     WebDriver driver;
-    DockerManager dockerManager = new DockerManager();
+//    DockerManager dockerManager = new DockerManager();
 
-    @BeforeSuite
-    public void startDocker() {
-        dockerManager.actionDocker("START");
-    }
+//    @BeforeSuite
+//    public void startDocker() {
+//        dockerManager.actionDocker("START");
+//    }
 
     @Parameters({"browser"})
     @BeforeTest
@@ -42,9 +42,9 @@ public class LoginTest {
     public void tearDown() {
         driver.quit();
     }
-
-    @AfterSuite
-    public void stopDocker() {
-        dockerManager.actionDocker("STOP");
-    }
+//
+//    @AfterSuite
+//    public void stopDocker() {
+//        dockerManager.actionDocker("STOP");
+//    }
 }

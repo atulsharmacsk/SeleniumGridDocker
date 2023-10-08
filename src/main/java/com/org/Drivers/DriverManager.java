@@ -37,7 +37,7 @@ public class DriverManager {
 
     @SneakyThrows
     public WebDriver getRemoteDriver(String browser) {
-        driver = new RemoteWebDriver(new URL("http://localhost:4444"), getRemoteBrowser(browser));
+        driver = new RemoteWebDriver(new URL("http://127.0.0.1:63974/wd/hub"), getRemoteBrowser(browser));
         return driver;
     }
 
